@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{40e9cf2e-f060-4900-b8b8-8221969dae9c}</UniqueIdentifier>
+      <Extensions>*.vgdbsettings</Extensions>
+    </Filter>
+    <Filter Include="VisualGDB settings\Device-specific files">
+      <UniqueIdentifier>{13f27769-0dec-497f-be03-ef02abf7e7fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LayerSys">
+      <UniqueIdentifier>{16937ea5-6f4e-4980-a1e6-21d7ad60dc82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LCD">
+      <UniqueIdentifier>{35a6d7d1-b5ed-4b2a-b758-5f0c55ee4832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoftTimer">
+      <UniqueIdentifier>{633995fb-16fc-435f-a8cc-14167d2f1d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS">
+      <UniqueIdentifier>{237b6e1e-93fc-4968-8cdc-c5b35794c929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS\core">
+      <UniqueIdentifier>{a8a55d3a-e7c3-4f6c-bdcf-3b6bdc8ff560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS\ext">
+      <UniqueIdentifier>{56eb440b-57da-4aa6-84ac-7e2d5d75013b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS\ext\profiler">
+      <UniqueIdentifier>{5f04fa16-8f11-4967-aea4-57850f3e5389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS\ext\recursive-mutex">
+      <UniqueIdentifier>{ac8277c2-ec34-4416-9e7d-1c30b39254d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS\ext\round-robin">
+      <UniqueIdentifier>{9cb86f2c-91c2-4fae-8be7-490f297e66d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS\port">
+      <UniqueIdentifier>{09f76e71-6171-4287-a328-2528fa3ddd66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS\port\avr">
+      <UniqueIdentifier>{20118442-56b3-41f4-9990-42f5e94aa622}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scmRTOS\port\avr\gcc">
+      <UniqueIdentifier>{e2385c11-4d6d-4daf-bd63-617dabec7249}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libPlatformDrv-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="libPlatformDrv-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="mcu.props">
+      <Filter>VisualGDB settings\Device-specific files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="MCU.xml">
+      <Filter>VisualGDB settings</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\button.cpp">
+      <Filter>LayerSys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\eventloop.cpp">
+      <Filter>LayerSys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\GraphObj.cpp">
+      <Filter>LayerSys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\Layer.cpp">
+      <Filter>LayerSys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\Picture.cpp">
+      <Filter>LayerSys</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LCD\font6x8.cpp">
+      <Filter>LCD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LCD\font8x14.cpp">
+      <Filter>LCD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LCD\fonts.cpp">
+      <Filter>LCD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LCD\LcdDrv.cpp">
+      <Filter>LCD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\core\os_kernel.cpp">
+      <Filter>scmRTOS\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\core\os_services.cpp">
+      <Filter>scmRTOS\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\core\usrlib.cpp">
+      <Filter>scmRTOS\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\ext\recursive-mutex\recursive_mutex.cpp">
+      <Filter>scmRTOS\ext\recursive-mutex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc\os_target.cpp">
+      <Filter>scmRTOS\port\avr\gcc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\SoftTimer\softtimer.cpp">
+      <Filter>SoftTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\SoftTimer\softtimercontroller.cpp">
+      <Filter>SoftTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\PlatformDrv\PlatformDrv.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc\os_target_asm.S">
+      <Filter>scmRTOS\port\avr\gcc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\activegraphobj.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\button.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\graphobj.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\Label.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\layer.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\Picture.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\policy.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\simplegraphobj.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\staticstack.hpp">
+      <Filter>LayerSys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LCD\fonts.hpp">
+      <Filter>LCD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\LCD\LcdDrv.hpp">
+      <Filter>LCD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\os_kernel.h">
+      <Filter>scmRTOS\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\os_services.h">
+      <Filter>scmRTOS\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\scmRTOS.h">
+      <Filter>scmRTOS\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\scmRTOS_defs.h">
+      <Filter>scmRTOS\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\usrlib.h">
+      <Filter>scmRTOS\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\ext\profiler\profiler.h">
+      <Filter>scmRTOS\ext\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\ext\recursive-mutex\recursive_mutex.h">
+      <Filter>scmRTOS\ext\recursive-mutex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\ext\round-robin\round-robin.h">
+      <Filter>scmRTOS\ext\round-robin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc\os_target.h">
+      <Filter>scmRTOS\port\avr\gcc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\SoftTimer\softtimer.hpp">
+      <Filter>SoftTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\PlatformDrv\KeyDrv.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\PlatformDrv.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS_CONFIG.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS_extensions.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS_TARGET_CFG.hpp" />
+  </ItemGroup>
+</Project>

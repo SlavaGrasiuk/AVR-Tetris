@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{62B82E74-4CFE-46BF-945C-90FBDB603614}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+    <GenerateHexFile>false</GenerateHexFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <GenerateBinFile>false</GenerateBinFile>
+    <GenerateHexFile>false</GenerateHexFile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\avr\gcc-avr-7.3.0</Toolchain>
+    <OutDir>..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\tmp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <TargetExt>.elf</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <Toolchain>D:\devel\msys64\home\slava\gcc\avr\gcc-avr-7.3.0</Toolchain>
+    <OutDir>..\..\..\bin\$(ProjectName)-$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\tmp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+    <TargetExt>.elf</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc;..\..\..\src\PlatformDrv\scmRTOS\core;..\..\..\src\PlatformDrv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <WarningLevel>Pedantic</WarningLevel>
+      <Optimization>Os</Optimization>
+      <PositionIndependentCode>false</PositionIndependentCode>
+      <CLanguageStandard>C11</CLanguageStandard>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <AdditionalOptions>-fshort-enums %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>F_CPU=16000000UL;__AVR_ATmega32__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryNames>PlatformDrv;%(AdditionalLibraryNames)</AdditionalLibraryNames>
+      <GenerateMapFile>true</GenerateMapFile>
+      <LibrarySearchDirectories>..\..\..\tmp\lib\$(Configuration)-$(Platform)\;%(LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalOptions>-mmcu=atmega32 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <ToolchainSettingsContainer>
+      <DeviceType>atmega32</DeviceType>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc;..\..\..\src\PlatformDrv\scmRTOS\core;..\..\..\src\PlatformDrv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Pedantic</WarningLevel>
+      <PositionIndependentCode>false</PositionIndependentCode>
+      <CLanguageStandard>C11</CLanguageStandard>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <AdditionalOptions>-fshort-enums %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>F_CPU=16000000UL;__AVR_ATmega32__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryNames>PlatformDrv;%(AdditionalLibraryNames)</AdditionalLibraryNames>
+      <GenerateMapFile>true</GenerateMapFile>
+      <LibrarySearchDirectories>..\..\..\tmp\lib\$(Configuration)-$(Platform)\;%(LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalOptions>-mmcu=atmega32 %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <ToolchainSettingsContainer>
+      <DeviceType>atmega32</DeviceType>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="mcu.props" />
+    <None Include="Tetris-Debug.vgdbsettings" />
+    <None Include="Tetris-Release.vgdbsettings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="MCU.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Tetris\FigInd.cpp" />
+    <ClCompile Include="..\..\..\src\Tetris\logo.cpp" />
+    <ClCompile Include="..\..\..\src\Tetris\Tetris.cpp" />
+    <ClCompile Include="..\..\..\src\Tetris\TetrisBase.cpp" />
+    <ClCompile Include="..\..\..\src\Tetris\TetrisBoard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\Tetris\FigInd.hpp" />
+    <ClInclude Include="..\..\..\src\Tetris\logo.h" />
+    <ClInclude Include="..\..\..\src\Tetris\TetrisBase.hpp" />
+    <ClInclude Include="..\..\..\src\Tetris\TetrisBoard.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

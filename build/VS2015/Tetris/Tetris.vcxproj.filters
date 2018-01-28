@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{e527f8c1-0310-4623-ba6a-cb628cf3db6b}</UniqueIdentifier>
+      <Extensions>*.vgdbsettings</Extensions>
+    </Filter>
+    <Filter Include="VisualGDB settings\Device-specific files">
+      <UniqueIdentifier>{ecdff249-5474-4f73-b747-4e5652d19cee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tetris-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="Tetris-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="mcu.props">
+      <Filter>VisualGDB settings\Device-specific files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="MCU.xml">
+      <Filter>VisualGDB settings</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Tetris\FigInd.cpp" />
+    <ClCompile Include="..\..\..\src\Tetris\logo.cpp" />
+    <ClCompile Include="..\..\..\src\Tetris\Tetris.cpp" />
+    <ClCompile Include="..\..\..\src\Tetris\TetrisBase.cpp" />
+    <ClCompile Include="..\..\..\src\Tetris\TetrisBoard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\Tetris\FigInd.hpp" />
+    <ClInclude Include="..\..\..\src\Tetris\logo.h" />
+    <ClInclude Include="..\..\..\src\Tetris\TetrisBase.hpp" />
+    <ClInclude Include="..\..\..\src\Tetris\TetrisBoard.hpp" />
+  </ItemGroup>
+</Project>

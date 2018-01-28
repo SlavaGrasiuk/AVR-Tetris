@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{046CA6F4-3165-4068-A2EA-42EE1FC8BB6C}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <OutputMemoryUtilization>false</OutputMemoryUtilization>
+    <GenerateBinFile>false</GenerateBinFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)mcu.props</MCUPropertyListFile>
+    <OutputMemoryUtilization>false</OutputMemoryUtilization>
+    <GenerateBinFile>false</GenerateBinFile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <Toolchain>D:\devel\msys64\home\slava\gcc\avr\gcc-avr-7.3.0</Toolchain>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <OutDir>..\..\..\tmp\lib\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\tmp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <Toolchain>D:\devel\msys64\home\slava\gcc\avr\gcc-avr-7.3.0</Toolchain>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+    <OutDir>..\..\..\tmp\lib\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>..\..\..\tmp\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ClCompile>
+      <Optimization>Os</Optimization>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <PositionIndependentCode>false</PositionIndependentCode>
+      <CLanguageStandard>C11</CLanguageStandard>
+      <AdditionalIncludeDirectories>..\..\..\src\PlatformDrv;..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc;..\..\..\src\PlatformDrv\scmRTOS\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>F_CPU=16000000UL;__AVR_ATmega32__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>-fshort-enums %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <WarningLevel>Pedantic</WarningLevel>
+    </ClCompile>
+    <ToolchainSettingsContainer>
+      <DeviceType>atmega32</DeviceType>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <PositionIndependentCode>false</PositionIndependentCode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <CLanguageStandard>C11</CLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <Optimization>Og</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\src\PlatformDrv;..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc;..\..\..\src\PlatformDrv\scmRTOS\core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>F_CPU=16000000UL;__AVR_ATmega32__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>-fshort-enums %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>GDB</DebugInformationFormat>
+      <WarningLevel>Pedantic</WarningLevel>
+    </ClCompile>
+    <ToolchainSettingsContainer>
+      <DeviceType>atmega32</DeviceType>
+    </ToolchainSettingsContainer>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="libPlatformDrv-Debug.vgdbsettings" />
+    <None Include="libPlatformDrv-Release.vgdbsettings" />
+    <None Include="mcu.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="MCU.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\button.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\eventloop.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\GraphObj.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\Layer.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\LayerSys\Picture.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\LCD\font6x8.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\LCD\font8x14.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\LCD\fonts.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\LCD\LcdDrv.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\PlatformDrv.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\core\os_kernel.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\core\os_services.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\core\usrlib.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\ext\recursive-mutex\recursive_mutex.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc\os_target.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc\os_target_asm.S" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\SoftTimer\softtimer.cpp" />
+    <ClCompile Include="..\..\..\src\PlatformDrv\SoftTimer\softtimercontroller.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\PlatformDrv\KeyDrv.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\activegraphobj.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\button.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\graphobj.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\Label.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\layer.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\Picture.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\policy.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\simplegraphobj.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LayerSys\staticstack.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LCD\fonts.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\LCD\LcdDrv.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\PlatformDrv.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\os_kernel.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\os_services.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\scmRTOS.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\scmRTOS_defs.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\core\usrlib.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\ext\profiler\profiler.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\ext\recursive-mutex\recursive_mutex.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\ext\round-robin\round-robin.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS\port\avr\gcc\os_target.h" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS_CONFIG.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS_extensions.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\scmRTOS_TARGET_CFG.hpp" />
+    <ClInclude Include="..\..\..\src\PlatformDrv\SoftTimer\softtimer.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
